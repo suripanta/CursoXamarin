@@ -4,15 +4,19 @@ using Xamarin.Forms.Xaml;
 
 namespace CursoXamarinForms
 {
+    using Views;
     public partial class App : Application
     {
+        #region Constructors
         public App()
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new LoginPage();
         }
+        #endregion
 
+        #region Methods
         protected override void OnStart()
         {
         }
@@ -24,5 +28,7 @@ namespace CursoXamarinForms
         protected override void OnResume()
         {
         }
+        #endregion
+
     }
 }
