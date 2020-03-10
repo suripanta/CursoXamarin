@@ -1,17 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--Diccionario de referencias InstanceLocator App Instance Locator-->
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="CursoXamarinForms.Views.LoginPage">
+             x:Class="CursoXamarinForms.Views.LoginPage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             Title="PROSIS Monitoreo"
+>
     <ContentPage.Content>
-        <StackLayout Padding="10, 20, 10, 5">
-            <Label Text="Login" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center"/>
-            <Label Text="Correo" FontSize="Large" />
-            <Entry Placeholder="Escribe tu correo" Keyboard="Email"></Entry>
-            <Label Text="Contraseña" FontSize="Large" />
-            <Entry Placeholder="Escribe tu contraseña" Keyboard="Chat" IsPassword="True"></Entry>
-        </StackLayout>
+        <ScrollView>
+            <StackLayout Padding="10, 20, 10, 5" VerticalOptions="Center">
+                <Image Source="tux" WidthRequest="200"></Image>
+                <Grid Margin="0, 20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Correo" FontSize="Large" Grid.Row="0" Grid.Column="0" VerticalTextAlignment="Center"/>
+                    <Entry Placeholder="Escribe tu correo" Grid.Row="0" Grid.Column="1" Keyboard="Email"></Entry>
+                    <Label Text="Contraseña" FontSize="Large" Grid.Row="1" Grid.Column="0" VerticalTextAlignment="Center"/>
+                    <Entry Grid.Row="1" Grid.Column="1" Keyboard="Chat" IsPassword="True" Placeholder="Escribe tu contraseña"></Entry>
+                </Grid>
+                <ActivityIndicator></ActivityIndicator>
+                <StackLayout Orientation="Horizontal">
+                    <Label HorizontalOptions="EndAndExpand" Text="¿Recordar inicio de sesión?" FontSize="Small" VerticalOptions="Center"></Label>
+                    <Switch HorizontalOptions="End"></Switch>
+                </StackLayout>
+                <Label HorizontalOptions="Center" Text="¿Olvidaste tu contraseña?" TextColor="Blue" FontSize="Small" VerticalOptions="CenterAndExpand"></Label>
+                
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="30,0">
+                    <Button Command="{Binding LoginCommand}" Text="Ingresar" BackgroundColor="Navy" TextColor="White" CornerRadius="23"/>
+                    <Button Text="Registrar" BackgroundColor="Red" TextColor="White" CornerRadius="23"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

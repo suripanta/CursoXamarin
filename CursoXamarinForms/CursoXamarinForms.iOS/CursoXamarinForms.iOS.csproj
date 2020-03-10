@@ -132,4 +132,7 @@
       <Name>CursoXamarinForms</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tux.png" />
+  </ItemGroup>
 </Project>
