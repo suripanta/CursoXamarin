@@ -135,4 +135,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\tux.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\gir.png" />
+  </ItemGroup>
 </Project>
