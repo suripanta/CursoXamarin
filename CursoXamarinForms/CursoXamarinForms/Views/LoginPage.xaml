@@ -31,8 +31,8 @@
                 <Label HorizontalOptions="Center" Text="¿Olvidaste tu contraseña?" TextColor="Blue" FontSize="Small" VerticalOptions="CenterAndExpand"></Label>
                 
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="40,0" VerticalOptions="CenterAndExpand">
-                    <Button Text="Login" BackgroundColor="Navy" TextColor="White" CornerRadius="23" HorizontalOptions="FillAndExpand" Command="{Binding LoginCommand}"/>
-                    <Button Text="Register" BackgroundColor="Red" TextColor="White" CornerRadius="23" HorizontalOptions="FillAndExpand" Command="{Binding RegisterCommand}"/>
+                    <Button Text="Login" BackgroundColor="Navy" TextColor="White" CornerRadius="23" HorizontalOptions="FillAndExpand" Command="{Binding LoginCommand}" IsEnabled="{Binding IsEnabled, Mode=TwoWay}"/>
+                    <Button Text="Register" BackgroundColor="Red" TextColor="White" CornerRadius="23" HorizontalOptions="FillAndExpand" Command="{Binding RegisterCommand}" IsEnabled="{Binding IsEnabled, Mode=TwoWay}"/>
                 </StackLayout>
             </StackLayout>
         </ScrollView>
