@@ -1,7 +1,7 @@
 ﻿namespace CursoXamarinForms.ViewModels
 {
+    using CursoXamarinForms.Views;
     using GalaSoft.MvvmLight.Command;
-    using System.ComponentModel;
     using System.Windows.Input;
     using Xamarin.Forms;
 
@@ -15,7 +15,11 @@
         #endregion
 
         #region Properties
-        public string Email { get; set; }
+        public string Email
+        {
+            get { return this.email; }
+            set { SetValue(ref this.email, value); }
+        }
         public string Password
         {
             get { return this.password; }
@@ -72,9 +76,13 @@
                     "Ok",
                     "El Dios Suripanta ha vuelto",
                     "Aceptar");
+                this.Email = string.Empty;
+                this.Password = string.Empty;
             }
             else
             {
+                this.IsRunning = false;
+                this.IsEnabled = true;
                 await Application.Current.MainPage.DisplayAlert(
                     "No mames",
                     "Teclea bien, perro",
@@ -84,6 +92,12 @@
             }
             this.IsRunning = false;
             this.IsEnabled = true;
+
+            this.Email = string.Empty;
+            this.Password = string.Empty;
+
+            MainViewModel.GetInstance().Lands = new LandsViewModel();
+            await Application.Current.MainPage.Navigation.PushAsync(new LandsPage());
         }
 
         public ICommand RegisterCommand { get; set; }
@@ -94,6 +108,9 @@
         {
             this.IsEnabled = true;
             this.IsRemembered = true;
+
+            this.Email = "suripanta@gmail.com";
+            this.Password = "hola";
         }
         #endregion
     }

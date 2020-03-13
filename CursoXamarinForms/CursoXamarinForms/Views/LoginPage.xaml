@@ -7,7 +7,7 @@
              mc:Ignorable="d"
              x:Class="CursoXamarinForms.Views.LoginPage"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
-             Title="PROSIS Monitoreo"
+             Title="PROSIS Monitoreo Login"
 >
     <ContentPage.Content>
         <ScrollView BindingContext="{Binding Login}">
